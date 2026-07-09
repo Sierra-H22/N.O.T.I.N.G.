@@ -8,7 +8,7 @@
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
         body{background:#0a0a0a;min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:'VT323',monospace;color:#d4a847;padding:16px}
-        .terminal{position:relative;width:100%;max-width:600px;aspect-ratio:16/10;background:linear-gradient(135deg,#000,#0a0a0a);border:1px solid #d4a847;box-shadow:0 0 30px rgba(212,168,71,0.3),inset 0 0 20px rgba(0,0,0,0.9);overflow:hidden}
+        .terminal{position:relative;width:100%;max-width:600px;aspect-ratio:16/10;background:linear-gradient(135deg,#000,#0a0a0a);border:1px solid #d4a847;box-shadow:0 0 30px rgba(212,168,71,0.3),inset 0 0 80px rgba(212,168,71,0.1)}
         .vignette{position:absolute;top:0;left:0;width:100%;height:100%;box-shadow:inset 0 0 80px rgba(0,0,0,0.8),inset 0 0 30px rgba(0,0,0,0.6);pointer-events:none;z-index:1}
         .screen{display:none;width:100%;height:100%;padding:20px;position:relative;z-index:2;flex-direction:column}
         .screen.active{display:flex}
@@ -156,7 +156,7 @@
     </div>
 
     <!-- M.I.C. MODULE -->
-    <button id="micTriggerBtn" onclick="toggleMicWindow()" style="position: fixed; top: 15px; left: 15px; width: 38px; height: 38px; border-radius: 50%; background: transparent; border: 2px solid #c81f2b; color: #c81f2b; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-family: 'VT323', monospace; z-index: 9998;">
+    <button id="micTriggerBtn" onclick="toggleMicWindow()" style="position: fixed; top: 15px; left: 15px; width: 38px; height: 38px; border-radius: 50%; background: transparent; border: 2px solid #c81f2b; color: #c81f2b; font-family: 'VT323', monospace; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s; z-index: 9998;">
         ▰
     </button>
 
@@ -171,8 +171,8 @@
             </div>
             <div id="micStatusBar" style="font-size: 14px; color: #c81f2b; letter-spacing: 2px; text-transform: uppercase;">STATUS: IDLE</div>
             <div style="display: flex; gap: 8px; width: 100%;">
-                <button onclick="changeMicSpeechState(true)" style="flex: 1; background: #000; border: 1px solid #c81f2b; color: #c81f2b; padding: 4px; font-family: inherit; font-size: 12px; cursor: pointer;">ON</button>
-                <button onclick="changeMicSpeechState(false)" style="flex: 1; background: #000; border: 1px solid #c81f2b; color: #c81f2b; padding: 4px; font-family: inherit; font-size: 12px; cursor: pointer;">OFF</button>
+                <button onclick="changeMicSpeechState(true)" style="flex: 1; background: #000; border: 1px solid #c81f2b; color: #c81f2b; padding: 4px; font-family: inherit; font-size: 12px; cursor: pointer; transition: all 0.3s;">SPEAK ON</button>
+                <button onclick="changeMicSpeechState(false)" style="flex: 1; background: #000; border: 1px solid #c81f2b; color: #c81f2b; padding: 4px; font-family: inherit; font-size: 12px; cursor: pointer; transition: all 0.3s;">SPEAK OFF</button>
             </div>
         </div>
     </div>
@@ -337,8 +337,8 @@
                 name: 'СЕКТОР -5 — ЦЕНТРАЛЬНЫЙ АРХИВ',
                 clearance: 'Ω',
                 docs: [
-                    { title: '«Начало всего»', clearance: 'Ω', body: 'Начало всего было словом. И это слово было Логос. И логос был у Бога.' },
-                    { title: 'Хроника первого события', clearance: 'Ω', body: 'В начале началось то, что не имело названия. Первое свидетельство датируется...' }
+                    { title: '«Начало всего»', clearance: 'Ω', body: 'Начало всего было словом. И это слово было Логос. И логос был у Бога. Логос был Богом.' },
+                    { title: 'Хроника первого события', clearance: 'Ω', body: 'В начале началось то, что не имело названия. Первое свидетельство было задокументировано.' }
                 ]
             },
             {
@@ -346,8 +346,8 @@
                 name: 'АМИГДАЛА — ХРАНИЛИЩЕ СТРАХОВ',
                 clearance: 'A-5',
                 docs: [
-                    { title: 'Протокол тестирования страха', clearance: 'A-5', body: 'Субъект был помещен в условия сенсорной депривации на 72 часа...' },
-                    { title: 'Анализ реакций на стимулы', clearance: 'A-5', body: 'Результаты показывают аномальную активность в префронтальной коре...' }
+                    { title: 'Протокол тестирования страха', clearance: 'A-5', body: 'Субъект был помещен в условия сенсорной депривации на 72 часа. Результаты превзошли ожидания.' },
+                    { title: 'Анализ реакций на стимулы', clearance: 'A-5', body: 'Результаты показывают аномальную активность в префронтальной коре при предъявлении визуальных стимулов.' }
                 ]
             },
             {
@@ -355,8 +355,8 @@
                 name: 'К.К.И.р.Д. — КАДРЫ И РАСПРЕДЕЛЕНИЕ',
                 clearance: 'I-3',
                 docs: [
-                    { title: 'Список сотрудников', clearance: 'I-3', body: 'Активные операторы сектора:\n- Оператор-7\n- Оператор-9\n- Оператор-13' },
-                    { title: 'Назначения на должности', clearance: 'I-3', body: 'Новые назначения на текущий квартал одобрены старшим руководством...' }
+                    { title: 'Список сотрудников', clearance: 'I-3', body: 'Активные операторы сектора:\n- Оператор-7\n- Оператор-9\n- Оператор-12' },
+                    { title: 'Назначения на должности', clearance: 'I-3', body: 'Новые назначения на текущий квартал одобрены старшим руководством.' }
                 ]
             },
             {
@@ -364,8 +364,8 @@
                 name: 'P.W.O.E. — ПРОЕКТЫ И ОПЕРАЦИИ',
                 clearance: 'S-2',
                 docs: [
-                    { title: 'Проект "Синапс"', clearance: 'S-2', body: 'Статус: В РАЗРАБОТКЕ\nФаза: Третья\nОжидаемая дата завершения...' },
-                    { title: 'Операция "Мемория"', clearance: 'S-2', body: 'Результаты полевых испытаний показывают перспективность методики...' }
+                    { title: 'Проект "Синапс"', clearance: 'S-2', body: 'Статус: В РАЗРАБОТКЕ\nФаза: Третья\nОжидаемая дата завершения: неизвестна' },
+                    { title: 'Операция "Мемория"', clearance: 'S-2', body: 'Результаты полевых испытаний показывают перспективность методики.' }
                 ]
             }
         ];
@@ -376,8 +376,8 @@
                 name: 'ЛИЧНОЕ ДЕЛО — ДОКТОР Д.',
                 clearance: 'A-7',
                 docs: [
-                    { title: 'Психологический рапорт', clearance: 'A-7', body: 'Доктор D демонстрирует стабильность и преданность организации...' },
-                    { title: 'История исследований', clearance: 'A-7', body: 'За 15 лет работы в Фонде провел более 200 исследований...' }
+                    { title: 'Психологический рапорт', clearance: 'A-7', body: 'Доктор D демонстрирует стабильность и преданность организации.' },
+                    { title: 'История исследований', clearance: 'A-7', body: 'За 15 лет работы в Фонде провел более 200 исследований.' }
                 ]
             }
         ];
