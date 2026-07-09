@@ -1,4 +1,3 @@
-<!-- ЧАСТЬ 1: ВСТАВИТЬ В САМЫЙ ВЕРХ ФАЙЛА (ЗАМЕНИТЬ ВСЁ ДО СТРОКИ С КНОПКОЙ M.I.C.) -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -7,7 +6,69 @@
     <title>N.O.T.H.I.N.G. — ТЕРМИНАЛ</title>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <style>
-        *{margin:0;padding:0;box-sizing:border-box}body{background:#0a0a0a;min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:'VT323',monospace;color:#d4a847;padding:16px;position:relative;overflow:hidden}body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(circle at 10% 20%,transparent 1px,#0a0a0a 1px),radial-gradient(circle at 30% 40%,transparent 1px,#0a0a0a 1px),radial-gradient(circle at 50% 60%,transparent 1px,#0a0a0a 1px),radial-gradient(circle at 70% 80%,transparent 1px,#0a0a0a 1px),radial-gradient(circle at 90% 10%,transparent 1px,#0a0a0a 1px);background-size:60px 60px;opacity:0.15;pointer-events:none;z-index:0}.terminal{position:relative;width:100%;max-width:440px;padding:24px 20px 20px;background:#0d0d0d;border:1px solid #2a2a1a;border-radius:12px;box-shadow:0 0 60px rgba(212,168,71,0.08);z-index:1;display:flex;flex-direction:column;min-height:340px;justify-content:space-between;transform:perspective(600px) rotateX(1.5deg) rotateY(-0.8deg);animation:phosphorFlicker 4s infinite}.terminal::after{content:'';position:absolute;inset:0;border-radius:12px;pointer-events:none;z-index:10;background:radial-gradient(ellipse at center,rgba(212,168,71,0.15) 0%,transparent 70%);mix-blend-mode:screen;box-shadow:inset 0 0 40px rgba(212,168,71,0.05)}.terminal::before{content:'';position:absolute;inset:0;border-radius:12px;pointer-events:none;z-index:9;background:repeating-linear-gradient(to bottom,rgba(0,0,0,0) 0px,rgba(0,0,0,0) 2px,rgba(0,0,0,0.15) 2px,rgba(0,0,0,0.15) 4px);background-size:100% 4px;animation:scanMove 6s linear infinite}@keyframes scanMove{0%{background-position:0 0}100%{background-position:0 100%}}@keyframes phosphorFlicker{0%,100%{opacity:1}50%{opacity:0.96}75%{opacity:1}25%{opacity:0.98}}.vignette{position:absolute;inset:0;border-radius:12px;pointer-events:none;z-index:11;background:radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,0.6) 100%);mix-blend-mode:multiply}.header{font-size:14px;letter-spacing:2px;color:#b8953a;border-bottom:1px solid #1f1f14;padding-bottom:10px;margin-bottom:16px;text-transform:uppercase;font-weight:400}.header span{color:#6a5a2a}.screen{display:none;flex-direction:column;flex:1}.screen.active{display:flex}.lines{flex:1;height:calc(5 * 1.5em + 4 * 4px);overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:4px 0;position:relative;min-height:100px}.line{font-size:18px;letter-spacing:1px;color:#d4a847;line-height:1.5;padding:2px 0;opacity:0;transform:translateY(100%);transition:opacity 0.4s ease,transform 0.4s ease;will-change:transform,opacity;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex-shrink:0;text-shadow:0 0 8px rgba(212,168,71,0.5),0 0 20px rgba(212,168,71,0.2)}.line.active{opacity:1;transform:translateY(0);text-shadow:0 0 12px rgba(212,168,71,0.6),0 0 30px rgba(212,168,71,0.25)}.line.fade-out{opacity:0;transform:translateY(-20%);transition:opacity 0.5s ease,transform 0.5s ease;text-shadow:0 0 30px rgba(212,168,71,0.1)}.bar{margin-top:20px;padding-top:12px;border-top:1px solid #1a1a0f;flex-shrink:0}.bar-track{width:100%;height:6px;background:#14140a;border-radius:3px;overflow:hidden;position:relative}.bar-fill{height:100%;width:0%;background:#d4a847;border-radius:3px;transition:width 0.15s linear;box-shadow:0 0 20px rgba(212,168,71,0.3)}.bar-label{display:flex;justify-content:flex-end;font-size:10px;color:#6a5a2a;letter-spacing:1px;margin-top:4px}#bootgate{align-items:center;justify-content:center;text-align:center;cursor:pointer}.gate-wrap{display:flex;flex-direction:column;align-items:center;gap:14px}.gate-title{font-size:15px;letter-spacing:5px;color:#d4a847;font-weight:700;text-shadow:0 0 20px rgba(212,168,71,0.2)}.gate-sub{font-size:11px;letter-spacing:2px;color:#6a5a2a}.gate-tap{margin-top:16px;font-size:11.5px;letter-spacing:2px;color:#d4a847;animation:gatePulse 1.6s ease-in-out infinite;text-shadow:0 0 15px rgba(212,168,71,0.2)}@keyframes gatePulse{0%,100%{opacity:0.5}50%{opacity:1}}#splash{align-items:center;justify-content:center}.splash-wrap{display:flex;flex-direction:column;align-items:center;gap:22px}.splash-logo{width:110px;height:auto;opacity:0;animation:splashFadeIn 2s ease-out forwards 0.1s;filter:drop-shadow(0 0 25px rgba(212,168,71,0.4))}.splash-tri{fill:none;stroke:#d4a847;stroke-width:3.2;stroke-dasharray:400;stroke-dashoffset:400;animation:splashDrawTri 2.6s ease-in-out forwards 0.1s;filter:drop-shadow(0 0 15px rgba(212,168,71,0.3))}.splash-eye{fill:#d4a847;opacity:0;animation:splashFadeIn 0.8s ease-out forwards 1.9s;filter:drop-shadow(0 0 20px rgba(212,168,71,0.4))}.splash-caption{font-size:13px;letter-spacing:5px;color:#d4a847;font-weight:700;opacity:0;animation:splashFadeIn 1.2s ease-out forwards 2.6s;text-shadow:0 0 20px rgba(212,168,71,0.2)}@keyframes splashFadeIn{to{opacity:1}}@keyframes splashDrawTri{to{stroke-dashoffset:0}}.auth-form{display:flex;flex-direction:column;gap:16px;padding:10px 0;flex:1;justify-content:center}.auth-form label{font-size:12px;color:#6a5a2a;letter-spacing:1px}.auth-form input{background:#0a0a0a;border:1px solid #1f1f14;color:#d4a847;padding:10px 12px;font-family:'VT323',monospace;font-size:16px;outline:none;transition:border 0.3s;box-shadow:inset 0 0 10px rgba(212,168,71,0.05)}.auth-form input:focus{border-color:#d4a847;box-shadow:0 0 20px rgba(212,168,71,0.1)}.auth-form button{background:#1f1f14;border:1px solid #2a2a1a;color:#d4a847;padding:12px;font-family:'VT323',monospace;font-size:16px;cursor:pointer;transition:background 0.3s;margin-top:8px;box-shadow:0 0 15px rgba(212,168,71,0.05)}.auth-form button:hover{background:#2a2a1a;box-shadow:0 0 30px rgba(212,168,71,0.15)}.auth-error{color:#b33a3a;font-size:14px;min-height:20px;text-align:center;text-shadow:0 0 15px rgba(179,58,58,0.3)}.init-lines{flex:1;display:flex;flex-direction:column;justify-content:center;gap:8px;padding:10px 0}.init-line{font-size:18px;color:#d4a847;opacity:0;transform:translateX(-10px);transition:opacity 0.5s ease,transform 0.5s ease;text-shadow:0 0 15px rgba(212,168,71,0.2)}.init-line.show{opacity:1;transform:translateX(0)}.init-line.done{color:#6a8a3a;text-shadow:0 0 15px rgba(106,138,58,0.3)}.main-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:10px 0;flex:1;align-content:center}.zone-card{background:#0a0a0a;border:1px solid #1f1f14;padding:14px 10px;text-align:center;font-size:14px;cursor:pointer;transition:border 0.3s,background 0.3s;color:#b8953a;box-shadow:0 0 10px rgba(212,168,71,0.02)}.zone-card:hover{border-color:#d4a847;background:#14140a;box-shadow:0 0 30px rgba(212,168,71,0.08)}.zone-card .title{font-size:16px;color:#d4a847;text-shadow:0 0 10px rgba(212,168,71,0.1)}.zone-card .sub{font-size:10px;color:#6a5a2a;margin-top:4px}.logo-area{display:flex;flex-direction:column;align-items:center;padding:20px 0;gap:10px}.logo-area .symbol{font-size:48px;color:#d4a847;letter-spacing:8px;opacity:0.6;text-shadow:0 0 30px rgba(212,168,71,0.15)}.logo-area .label{font-size:12px;color:#6a5a2a;letter-spacing:4px}.omega{font-size:28px;color:#b8953a;border:1px solid #2a2a1a;padding:10px 20px;display:inline-block;cursor:pointer;transition:0.3s;box-shadow:0 0 15px rgba(212,168,71,0.02)}.omega:hover{border-color:#d4a847;background:#14140a;box-shadow:0 0 40px rgba(212,168,71,0.08)}@media(max-width:480px){.terminal{padding:16px 14px 18px;min-height:300px}.header{font-size:12px;padding-bottom:8px;margin-bottom:12px}.line{font-size:16px}.lines{height:calc(5 * 1.4em + 4 * 4px);min-height:80px}.init-line{font-size:16px}.zone-card{padding:10px 8px;font-size:12px}.zone-card .title{font-size:14px}.logo-area .symbol{font-size:36px}}@media(max-width:380px){.line{font-size:14px}.lines{height:calc(5 * 1.3em + 4 * 4px);min-height:70px}}.overlay{position:fixed;inset:0;z-index:100;background:#0a0a0a;display:none;flex-direction:column;padding:24px 20px;overflow-y:auto}.overlay.active{display:flex}.overlay-header{font-size:14px;letter-spacing:2px;color:#b8953a;border-bottom:1px solid #1f1f14;padding-bottom:10px;margin-bottom:16px;text-transform:uppercase;font-weight:400;display:flex;justify-content:space-between;align-items:center}.overlay-back{background:none;border:1px solid #1f1f14;color:#6a5a2a;font-family:'VT323',monospace;font-size:12px;padding:6px 14px;cursor:pointer;transition:0.3s}.overlay-back:hover{border-color:#d4a847;color:#d4a847;box-shadow:0 0 20px rgba(212,168,71,0.05)}.doc-item{border-left:2px solid #1f1f14;padding:10px 0 10px 14px;margin-bottom:4px;cursor:pointer;transition:border-color 0.3s,background 0.3s}.doc-item:hover{border-left-color:#d4a847;background:rgba(212,168,71,0.02)}.doc-item .dname{font-size:14px;color:#d4a847;text-shadow:0 0 10px rgba(212,168,71,0.05)}.doc-item .dmeta{font-size:10px;color:#6a5a2a;letter-spacing:1px}.group-header{font-size:10px;letter-spacing:2px;color:#6a5a2a;margin:16px 0 6px;border-bottom:1px solid #1f1f14;padding-bottom:4px;text-transform:uppercase}.group-locked{font-size:12px;color:#6a5a2a;border:1px dashed #1f1f14;padding:16px;margin-top:10px;text-align:center}#docBody{white-space:pre-wrap;font-size:14px;line-height:1.6;color:#d4a847;padding:10px 0;text-shadow:0 0 12px rgba(212,168,71,0.05)}#docHeader{font-size:16px;color:#d4a847;margin-bottom:4px;text-shadow:0 0 15px rgba(212,168,71,0.1)}#docClearance{font-size:11px;color:#6a5a2a;margin-bottom:16px;letter-spacing:1px}#docBody.tone-red{color:#b33a3a;text-shadow:0 0 15px rgba(179,58,58,0.15)}#docBody.tone-blue{color:#5a8aaa;text-shadow:0 0 15px rgba(90,138,170,0.15)}@media(max-width:480px){.overlay{padding:16px 14px}.doc-item .dname{font-size:12px}#docBody{font-size:12px}}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{background:#0a0a0a;min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:'VT323',monospace;color:#d4a847;padding:16px}
+        .terminal{position:relative;width:100%;max-width:600px;aspect-ratio:16/10;background:linear-gradient(135deg,#000,#0a0a0a);border:1px solid #d4a847;box-shadow:0 0 30px rgba(212,168,71,0.3),inset 0 0 20px rgba(0,0,0,0.9);overflow:hidden}
+        .vignette{position:absolute;top:0;left:0;width:100%;height:100%;box-shadow:inset 0 0 80px rgba(0,0,0,0.8),inset 0 0 30px rgba(0,0,0,0.6);pointer-events:none;z-index:1}
+        .screen{display:none;width:100%;height:100%;padding:20px;position:relative;z-index:2;flex-direction:column}
+        .screen.active{display:flex}
+        #bootgate{justify-content:center;align-items:center}
+        .gate-wrap{text-align:center}
+        .gate-title{font-size:24px;letter-spacing:3px;margin-bottom:16px;color:#d4a847;text-shadow:0 0 10px rgba(212,168,71,0.5)}
+        .gate-sub{font-size:14px;color:#8b7a3e;margin-bottom:24px;letter-spacing:2px}
+        .gate-tap{font-size:12px;color:#d4a847;opacity:0.7;animation:blink 1s infinite}
+        @keyframes blink{0%,50%{opacity:0.7}100%{opacity:0.3}}
+        .splash-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%}
+        .splash-logo{width:200px;height:230px;margin-bottom:20px}
+        .splash-tri{fill:none;stroke:#d4a847;stroke-width:2}
+        .splash-eye{fill:#d4a847;animation:pulse 2s infinite}
+        @keyframes pulse{0%,100%{r:7;opacity:1}50%{r:10;opacity:0.5}}
+        .splash-caption{font-size:18px;letter-spacing:3px;color:#d4a847;text-shadow:0 0 15px rgba(212,168,71,0.6)}
+        .header{font-size:14px;color:#d4a847;margin-bottom:16px;letter-spacing:2px;border-bottom:1px solid #d4a847;padding-bottom:8px}
+        .header span{color:#8b7a3e}
+        .lines{flex:1;overflow-y:auto;margin-bottom:12px;padding:8px;background:rgba(0,0,0,0.5);border:1px solid #4a4a2a}
+        .line{font-size:11px;margin-bottom:4px;color:#d4a847;white-space:pre-wrap;word-break:break-word}
+        .line.fade-out{opacity:0.3;transition:opacity 0.3s}
+        .bar{display:flex;gap:8px;margin-top:12px;align-items:center}
+        .bar-track{flex:1;height:16px;border:1px solid #d4a847;background:#000;position:relative;overflow:hidden}
+        .bar-fill{height:100%;background:linear-gradient(90deg,#d4a847,#e8c547);width:0%;transition:width 0.2s}
+        .bar-label{min-width:40px;text-align:right;font-size:12px;color:#d4a847}
+        .auth-form{display:flex;flex-direction:column;gap:12px;margin-top:16px}
+        .auth-form label{font-size:12px;color:#d4a847;letter-spacing:1px}
+        .auth-form input{background:#000;border:1px solid #d4a847;color:#d4a847;padding:8px;font-family:'VT323',monospace;font-size:12px;outline:none}
+        .auth-form input::placeholder{color:#6a5a2a}
+        .auth-form input:focus{box-shadow:0 0 10px rgba(212,168,71,0.4);border-color:#e8c547}
+        .auth-error{color:#c81f2b;font-size:10px;letter-spacing:1px;min-height:14px}
+        .auth-form button{background:#000;border:1px solid #d4a847;color:#d4a847;padding:8px;font-family:'VT323',monospace;cursor:pointer;margin-top:8px;transition:all 0.3s;letter-spacing:1px}
+        .auth-form button:hover{background:#d4a847;color:#000;box-shadow:0 0 20px rgba(212,168,71,0.6)}
+        .init-lines{flex:1;overflow-y:auto;padding:12px;background:rgba(0,0,0,0.5);border:1px solid #4a4a2a;font-size:11px}
+        .init-line{margin-bottom:4px;color:#d4a847}
+        .logo-area{text-align:center;margin-bottom:20px;padding:12px}
+        .symbol{font-size:48px;color:#d4a847;margin-bottom:8px;text-shadow:0 0 15px rgba(212,168,71,0.4)}
+        .label{font-size:12px;color:#8b7a3e;letter-spacing:2px}
+        .main-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+        .zone-card{background:rgba(212,168,71,0.05);border:1px solid #d4a847;padding:16px;cursor:pointer;transition:all 0.3s;text-align:center}
+        .zone-card:hover{background:rgba(212,168,71,0.15);box-shadow:0 0 20px rgba(212,168,71,0.3)}
+        .zone-card .title{font-size:13px;color:#d4a847;margin-bottom:8px;letter-spacing:1px}
+        .zone-card .sub{font-size:10px;color:#6a5a2a}
+        .omega{font-size:24px;cursor:pointer;color:#d4a847;transition:all 0.3s;display:inline-block}
+        .omega:hover{transform:scale(1.3);text-shadow:0 0 15px rgba(212,168,71,0.6)}
+        .overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);z-index:100;padding:20px;overflow-y:auto;flex-direction:column}
+        .overlay.active{display:flex}
+        .overlay-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;border-bottom:1px solid #d4a847;padding-bottom:8px}
+        .overlay-header span{font-size:14px;color:#d4a847;letter-spacing:2px}
+        .overlay-back{background:#000;border:1px solid #d4a847;color:#d4a847;padding:6px 12px;cursor:pointer;font-family:'VT323',monospace;font-size:11px;transition:all 0.3s}
+        .overlay-back:hover{background:#d4a847;color:#000}
+        #docListItems{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+        .doc-item{background:rgba(212,168,71,0.05);border:1px solid #6a5a2a;padding:12px;cursor:pointer;transition:all 0.3s;font-size:11px}
+        .doc-item:hover{background:rgba(212,168,71,0.15);border-color:#d4a847;box-shadow:0 0 15px rgba(212,168,71,0.2)}
+        .doc-item .doc-title{color:#d4a847;margin-bottom:4px;letter-spacing:1px}
+        .doc-item .doc-clearance{color:#6a5a2a;font-size:9px}
+        #docClearance{color:#c81f2b;font-size:12px;margin-bottom:12px;letter-spacing:1px}
+        #docBody{font-size:12px;line-height:1.6;color:#d4a847;white-space:pre-wrap;word-break:break-word;max-height:60vh;overflow-y:auto}
+        .tone-red{color:#c81f2b}
+        .tone-yellow{color:#d4a847}
+        .tone-green{color:#4a9a6f}
     </style>
 </head>
 <body>
@@ -93,34 +154,13 @@
         <div id="docClearance"></div>
         <div id="docBody" class="tone-red"></div>
     </div>
-    
-    <script>
-        function showScreen(id){document.querySelectorAll('.screen').forEach(el=>el.classList.remove('active'));document.getElementById(id).classList.add('active');}
-        function printText(element,text,callback){let i=0;element.textContent='';function type(){if(i<text.length){element.textContent+=text.charAt(i);i++;setTimeout(type,28+Math.random()*16);}else{if(callback)callback();}}type();}
-        function addLine(container,text,callback){const lines=container.querySelectorAll('.line');if(lines.length>=5){const oldest=lines[0];oldest.classList.add('fade-out');setTimeout(()=>{if(oldest.parentNode)oldest.remove();},500);}const line=document.createElement('div');line.className='line';container.appendChild(line);printText(line,text,()=>{setTimeout(()=>{if(callback)callback();},400);});requestAnimationFrame(()=>{line.classList.add('active');});}
-        function runQueue(container,messages,onComplete,progressCallback){let index=0;let isProcessing=false;function next(){if(isProcessing)return;if(index>=messages.length){if(onComplete)onComplete();return;}isProcessing=true;const text=messages[index];index++;if(progressCallback)progressCallback(index,messages.length);addLine(container,text,()=>{isProcessing=false;setTimeout(next,300);});}next();}
-        function updateBar(fillEl,labelEl,current,total){const pct=Math.min(Math.round((current/total)*100),100);fillEl.style.width=pct+'%';labelEl.textContent=pct+'%';}
-        const biosMessages=['ПРОВЕРКА ИСПРАВНОСТИ ФУНКЦИОНИРОВАНИЯ...','ПОДКЛЮЧЕНИЕ СИСТЕМЫ БЕЗОПАСНОСТИ...','ЗАГРУЗКА АРХИВА...','ЗАПУСК ЯДРА...','КОГНИТИВНЫЙ ФИЛЬТР АКТИВЕН...','СВЯЗЬ С ЦЕНТРАЛЬНЫМ АРХИВОМ УСТАНОВЛЕНА.'];
-        const biosContainer=document.getElementById('biosLines');const biosFill=document.getElementById('biosBarFill');const biosLabel=document.getElementById('biosBarLabel');
-        const loadingMessages=['ЗАГРУЗКА ЯДРА СИСТЕМЫ...','ИНИЦИАЛИЗАЦИЯ МОДУЛЕЙ ПАМЯТИ...','ПРОВЕРКА ЦЕЛОСТНОСТИ ДАННЫХ...','ПОДКЛЮЧЕНИЕ К ЦЕНТРАЛЬНОМУ АРХИВУ...','ЗАПУСК КОГНИТИВНОГО ФИЛЬТРА...','СИНХРОНИЗАЦИЯ С СЕТЬЮ N-NET...','ЗАГРУЗКА ПОЛЬЗОВАТЕЛЬСКОГО ИНТЕРФЕЙСА...','СИСТЕМА ГОТОВА.'];
-        let loadingStarted=false;
-        function startLoading(){if(loadingStarted)return;loadingStarted=true;const container=document.getElementById('loadingLines');const fill=document.getElementById('loadingBarFill');const label=document.getElementById('loadingBarLabel');runQueue(container,loadingMessages,()=>{fill.style.width='100%';label.textContent='100%';setTimeout(()=>{showScreen('auth');},600);},(current,total)=>{updateBar(fill,label,current,total);});}
-        document.getElementById('authBtn').addEventListener('click',()=>{const id=document.getElementById('authId').value.trim();const pass=document.getElementById('authPass').value.trim();const error=document.getElementById('authError');if(!id||!pass){error.textContent='ЗАПОЛНИТЕ ВСЕ ПОЛЯ';return;}if(id==='NF-DR-3197'&&pass==='wenotall'){error.textContent='';showScreen('init');startInit();}else{error.textContent='НЕВЕРНЫЙ ID ИЛИ ПАРОЛЬ';}});
-        function startInit(){const container=document.getElementById('initLines');container.innerHTML='';const messages=['ЗАГРУЗКА ПРОФИЛЯ...','ПРОВЕРКА ДОПУСКА...','СИНХРОНИЗАЦИЯ С АРХИВОМ...','АКТИВАЦИЯ КОГНИТИВНОГО ФИЛЬТРА...','ПОДКЛЮЧЕНИЕ К СЕТИ N-NET...','ГОТОВО.'];let index=0;function showNext(){if(index>=messages.length){setTimeout(()=>{showScreen('main');},500);return;}const div=document.createElement('div');div.className='init-line';div.textContent=messages[index];container.appendChild(div);setTimeout(()=>{div.classList.add('show');if(index===messages.length-1){div.classList.add('done');}},100);index++;setTimeout(showNext,500+Math.random()*400);}showNext();}
-        const zones=[{id:'archive',name:'СЕКТОР -5 — ЦЕНТРАЛЬНЫЙ АРХИВ',clearance:'Ω',docs:[{title:'«Начало всего»',clearance:'Ω',body:'Начало всего. Мир был создан не из материи, а из мысли. Создатель исчез. И создание научилось жить без него.',tone:'red'}]},{id:'amygdala',name:'ЗОНА 19 — ПРОЕКТ «АМИГДАЛА»',clearance:'A-1',docs:[{title:'Статус проекта',clearance:'H-2',body:'Проект АмигДала в стадии разработки.',tone:'blue'}]},{id:'kkird',name:'К.К.И.р.Д. — ДОПУСК И КАДРЫ',clearance:'I-1',docs:[{title:'Иерархия уровней допуска',clearance:'I-1',body:'I-0 Общий персонал. I-1 Внутренний. Ω Стратегический.',tone:'blue'}]},{id:'pwoe',name:'ПРОГРАММА P.W.O.E. — «КРЫЛЬЯ ЕВЫ»',clearance:'H-2',docs:[{title:'Инструктаж',clearance:'H-2',body:'Космическая программа P.W.O.E. Экспансия ради сохранения.',tone:'blue'}]}];
-        const doctorZones=[{id:'personal-d',name:'ЛИЧНОЕ ДЕЛО — ДОКТОР Д.',clearance:'A-7',docs:[{title:'Психологический рапорт',clearance:'A-7',body:'Доктор Д. — руководитель проекта АмигДала. Интеллект высокий. Усталость хроническая.',tone:'red'}]}];
-        const folders=[{id:'admin',name:'АДМИНИСТРАЦИЯ И ДОПУСК',clearance:'I-1',groups:[{label:'Кадры и допуск',docs:zones.find(z=>z.id==='kkird').docs}]},{id:'amygdala',name:'ПРОЕКТ «АМИГДАЛА»',clearance:'A-1',groups:[{label:'Статус проекта',docs:zones.find(z=>z.id==='amygdala').docs}]},{id:'pwoe',name:'КОСМИЧЕСКАЯ ПРОГРАММА P.W.O.E.',clearance:'H-2',groups:[{label:'Крылья Евы',docs:zones.find(z=>z.id==='pwoe').docs}]},{id:'personal',name:'ЛИЧНЫЕ ДЕЛА',clearance:'A-7',groups:[{label:'Доктор Д.',doctorOnly:true,docs:doctorZones.find(z=>z.id==='personal-d').docs}]}];
-        let currentAccount='general';
-        function openZone(zone){const list=document.getElementById('docListItems');list.innerHTML='';document.getElementById('docListTitle').textContent=zone.name;document.getElementById('docListSub').textContent='Требуемый допуск: '+zone.clearance;if(zone.groups){const visible=zone.groups.filter(g=>!g.doctorOnly||currentAccount==='doctor');if(visible.length===0){const locked=document.createEleme
-<!-- ЧАСТЬ 2: ВСТАВИТЬ В САМЫЙ КОНЕЦ (СРАЗУ ПОСЛЕ ПЕРВОЙ ЧАСТИ, ПЕРЕД ЗАКРЫВАЮЩИМ ТЕГОМ И В Т Т Е Г И ) -->
-    <!-- ================================================================= -->
-    <!-- МОДУЛЬ M.I.C. -->
-    <!-- ================================================================= -->
-    <button id="micTriggerBtn" onclick="toggleMicWindow()" style="position: fixed; top: 15px; left: 15px; width: 38px; height: 38px; border-radius: 50%; background: transparent; border: 2px solid #c81f2b; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 9998; color: #c81f2b; font-family: 'VT323', monospace; font-size: 18px; padding: 0; box-shadow: 0 0 10px rgba(200, 31, 43, 0.2);">
+
+    <!-- M.I.C. MODULE -->
+    <button id="micTriggerBtn" onclick="toggleMicWindow()" style="position: fixed; top: 15px; left: 15px; width: 38px; height: 38px; border-radius: 50%; background: transparent; border: 2px solid #c81f2b; color: #c81f2b; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-family: 'VT323', monospace; z-index: 9998;">
         ▰
     </button>
 
-    <div id="micSystemWindow" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 260px; background: #000; border: 1px solid #c81f2b; z-index: 9999; font-family: 'VT323', monospace; box-shadow: 0 0 20px rgba(200, 31, 43, 0.15);">
+    <div id="micSystemWindow" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 260px; background: #000; border: 1px solid #c81f2b; z-index: 9999; font-family: 'VT323', monospace;">
         <div style="border-bottom: 1px solid #c81f2b; color: #c81f2b; padding: 6px 10px; font-size: 14px; display: flex; justify-content: space-between; align-items: center; letter-spacing: 1px;">
             <span>[ SYSTEM.MOD: M.I.C. ]</span>
             <button onclick="toggleMicWindow()" style="background: transparent; border: none; color: #c81f2b; font-family: inherit; font-size: 14px; cursor: pointer; padding: 0;">[X]</button>
@@ -131,13 +171,298 @@
             </div>
             <div id="micStatusBar" style="font-size: 14px; color: #c81f2b; letter-spacing: 2px; text-transform: uppercase;">STATUS: IDLE</div>
             <div style="display: flex; gap: 8px; width: 100%;">
-                <button onclick="changeMicSpeechState(true)" style="flex: 1; background: #000; border: 1px solid #c81f2b; color: #c81f2b; padding: 4px; font-family: inherit; font-size: 14px; cursor: pointer;">[ TALK ]</button>
-                <button onclick="changeMicSpeechState(false)" style="flex: 1; background: #000; border: 1px solid #c81f2b; color: #c81f2b; padding: 4px; font-family: inherit; font-size: 14px; cursor: pointer;">[ STOP ]</button>
+                <button onclick="changeMicSpeechState(true)" style="flex: 1; background: #000; border: 1px solid #c81f2b; color: #c81f2b; padding: 4px; font-family: inherit; font-size: 12px; cursor: pointer;">ON</button>
+                <button onclick="changeMicSpeechState(false)" style="flex: 1; background: #000; border: 1px solid #c81f2b; color: #c81f2b; padding: 4px; font-family: inherit; font-size: 12px; cursor: pointer;">OFF</button>
             </div>
         </div>
     </div>
 
     <script>
+        // ============================================================
+        // CORE FUNCTIONS
+        // ============================================================
+        function showScreen(id) {
+            document.querySelectorAll('.screen').forEach(el => el.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+
+        function printText(element, text, callback) {
+            let i = 0;
+            element.textContent = '';
+            function type() {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, 28 + Math.random() * 16);
+                } else {
+                    if (callback) callback();
+                }
+            }
+            type();
+        }
+
+        function addLine(container, text, callback) {
+            const lines = container.querySelectorAll('.line');
+            if (lines.length >= 5) {
+                const oldest = lines[0];
+                oldest.classList.add('fade-out');
+                setTimeout(() => {
+                    if (oldest.parentNode) oldest.remove();
+                }, 300);
+            }
+            const line = document.createElement('div');
+            line.className = 'line';
+            line.textContent = text;
+            container.appendChild(line);
+            if (callback) callback();
+        }
+
+        function runQueue(container, messages, onComplete, progressCallback) {
+            let index = 0;
+            let isProcessing = false;
+            function next() {
+                if (isProcessing) return;
+                if (index >= messages.length) {
+                    if (onComplete) onComplete();
+                    return;
+                }
+                isProcessing = true;
+                addLine(container, messages[index], () => {
+                    if (progressCallback) progressCallback(index + 1, messages.length);
+                    index++;
+                    isProcessing = false;
+                    setTimeout(next, 200 + Math.random() * 300);
+                });
+            }
+            next();
+        }
+
+        function updateBar(fillEl, labelEl, current, total) {
+            const pct = Math.min(Math.round((current / total) * 100), 100);
+            fillEl.style.width = pct + '%';
+            labelEl.textContent = pct + '%';
+        }
+
+        // ============================================================
+        // BOOT SEQUENCE
+        // ============================================================
+        const biosMessages = [
+            'ПРОВЕРКА ИСПРАВНОСТИ ФУНКЦИОНИРОВАНИЯ...',
+            'ПОДКЛЮЧЕНИЕ СИСТЕМЫ БЕЗОПАСНОСТИ...',
+            'ЗАГРУЗКА АРХИВА ДОСТУПА...',
+            'ИНИЦИАЛИЗАЦИЯ ЯДРА СИСТЕМЫ...',
+            'СКАНИРОВАНИЕ МОДУЛЕЙ ПАМЯТИ...'
+        ];
+
+        const biosContainer = document.getElementById('biosLines');
+        const biosFill = document.getElementById('biosBarFill');
+        const biosLabel = document.getElementById('biosBarLabel');
+
+        const loadingMessages = [
+            'ЗАГРУЗКА ЯДРА СИСТЕМЫ...',
+            'ИНИЦИАЛИЗАЦИЯ МОДУЛЕЙ ПАМЯТИ...',
+            'ПРОВЕРКА ЦЕЛОСТНОСТИ ДАННЫХ...',
+            'ПОДКЛЮЧЕНИЕ МОДУЛЯ ДОСТУПА...',
+            'АКТИВАЦИЯ ПРОТОКОЛА БЕЗОПАСНОСТИ...'
+        ];
+
+        let loadingStarted = false;
+        function startLoading() {
+            if (loadingStarted) return;
+            loadingStarted = true;
+            const container = document.getElementById('loadingLines');
+            const fill = document.getElementById('loadingBarFill');
+            const label = document.getElementById('loadingBarLabel');
+            runQueue(container, loadingMessages, () => {
+                setTimeout(() => showScreen('auth'), 1000);
+            }, (current, total) => {
+                updateBar(fill, label, current, total);
+            });
+        }
+
+        document.getElementById('bootgate').addEventListener('click', () => {
+            showScreen('splash');
+            setTimeout(() => {
+                showScreen('bios');
+                runQueue(biosContainer, biosMessages, startLoading, (current, total) => {
+                    updateBar(biosFill, biosLabel, current, total);
+                });
+            }, 1200);
+        });
+
+        document.getElementById('authBtn').addEventListener('click', () => {
+            const id = document.getElementById('authId').value.trim();
+            const pass = document.getElementById('authPass').value.trim();
+            const error = document.getElementById('authError');
+            
+            if (!id || !pass) {
+                error.textContent = 'ОШИБКА: НЕПОЛНЫЕ УЧЕТНЫЕ ДАННЫЕ';
+                return;
+            }
+            
+            if (id.includes('DOCTOR') || id.includes('D')) {
+                currentAccount = 'doctor';
+                error.textContent = '';
+                showScreen('init');
+                startInit();
+            } else {
+                currentAccount = 'general';
+                error.textContent = '';
+                showScreen('init');
+                startInit();
+            }
+        });
+
+        function startInit() {
+            const container = document.getElementById('initLines');
+            container.innerHTML = '';
+            const messages = [
+                'ЗАГРУЗКА ПРОФИЛЯ...',
+                'ПРОВЕРКА ДОПУСКА...',
+                'СИНХРОНИЗАЦИЯ БАЗЫ ДАННЫХ...',
+                'ГОТОВО К РАБОТЕ'
+            ];
+            runQueue(container, messages, () => {
+                setTimeout(() => showScreen('main'), 800);
+                loadMainGrid();
+            });
+        }
+
+        // ============================================================
+        // DATA
+        // ============================================================
+        const zones = [
+            {
+                id: 'archive',
+                name: 'СЕКТОР -5 — ЦЕНТРАЛЬНЫЙ АРХИВ',
+                clearance: 'Ω',
+                docs: [
+                    { title: '«Начало всего»', clearance: 'Ω', body: 'Начало всего было словом. И это слово было Логос. И логос был у Бога.' },
+                    { title: 'Хроника первого события', clearance: 'Ω', body: 'В начале началось то, что не имело названия. Первое свидетельство датируется...' }
+                ]
+            },
+            {
+                id: 'amygdala',
+                name: 'АМИГДАЛА — ХРАНИЛИЩЕ СТРАХОВ',
+                clearance: 'A-5',
+                docs: [
+                    { title: 'Протокол тестирования страха', clearance: 'A-5', body: 'Субъект был помещен в условия сенсорной депривации на 72 часа...' },
+                    { title: 'Анализ реакций на стимулы', clearance: 'A-5', body: 'Результаты показывают аномальную активность в префронтальной коре...' }
+                ]
+            },
+            {
+                id: 'kkird',
+                name: 'К.К.И.р.Д. — КАДРЫ И РАСПРЕДЕЛЕНИЕ',
+                clearance: 'I-3',
+                docs: [
+                    { title: 'Список сотрудников', clearance: 'I-3', body: 'Активные операторы сектора:\n- Оператор-7\n- Оператор-9\n- Оператор-13' },
+                    { title: 'Назначения на должности', clearance: 'I-3', body: 'Новые назначения на текущий квартал одобрены старшим руководством...' }
+                ]
+            },
+            {
+                id: 'pwoe',
+                name: 'P.W.O.E. — ПРОЕКТЫ И ОПЕРАЦИИ',
+                clearance: 'S-2',
+                docs: [
+                    { title: 'Проект "Синапс"', clearance: 'S-2', body: 'Статус: В РАЗРАБОТКЕ\nФаза: Третья\nОжидаемая дата завершения...' },
+                    { title: 'Операция "Мемория"', clearance: 'S-2', body: 'Результаты полевых испытаний показывают перспективность методики...' }
+                ]
+            }
+        ];
+
+        const doctorZones = [
+            {
+                id: 'personal-d',
+                name: 'ЛИЧНОЕ ДЕЛО — ДОКТОР Д.',
+                clearance: 'A-7',
+                docs: [
+                    { title: 'Психологический рапорт', clearance: 'A-7', body: 'Доктор D демонстрирует стабильность и преданность организации...' },
+                    { title: 'История исследований', clearance: 'A-7', body: 'За 15 лет работы в Фонде провел более 200 исследований...' }
+                ]
+            }
+        ];
+
+        const folders = [
+            {
+                id: 'admin',
+                name: 'АДМИНИСТРАЦИЯ И ДОПУСК',
+                clearance: 'I-1',
+                groups: [
+                    { label: 'Кадры и допуск', docs: zones.find(z => z.id === 'kkird').docs }
+                ]
+            },
+            {
+                id: 'amygdala-folder',
+                name: 'ПСИХОЛОГИЧЕСКИЕ АРХИВЫ',
+                clearance: 'A-5',
+                groups: [
+                    { label: 'Тестирование', docs: zones.find(z => z.id === 'amygdala').docs }
+                ]
+            }
+        ];
+
+        let currentAccount = 'general';
+
+        function openZone(zone) {
+            const list = document.getElementById('docListItems');
+            list.innerHTML = '';
+            document.getElementById('docListTitle').textContent = zone.name;
+            document.getElementById('docListSub').textContent = `Уровень допуска: ${zone.clearance}`;
+            
+            zone.docs.forEach((doc, idx) => {
+                const item = document.createElement('div');
+                item.className = 'doc-item';
+                item.innerHTML = `<div class="doc-title">${doc.title}</div><div class="doc-clearance">Допуск: ${doc.clearance}</div>`;
+                item.addEventListener('click', () => openDocument(doc));
+                list.appendChild(item);
+            });
+            
+            document.getElementById('docListOverlay').classList.add('active');
+        }
+
+        function openDocument(doc) {
+            document.getElementById('docHeader').textContent = doc.title;
+            document.getElementById('docClearance').textContent = `[ ДОПУСК: ${doc.clearance} ]`;
+            document.getElementById('docBody').textContent = doc.body;
+            document.getElementById('docListOverlay').classList.remove('active');
+            document.getElementById('docReaderOverlay').classList.add('active');
+        }
+
+        function loadMainGrid() {
+            const grid = document.getElementById('zoneGrid');
+            const cards = grid.querySelectorAll('.zone-card');
+            const zonesToShow = currentAccount === 'doctor' ? zones.concat(doctorZones) : zones;
+            
+            cards.forEach((card, idx) => {
+                if (idx < zonesToShow.length) {
+                    const zone = zonesToShow[idx];
+                    card.dataset.zone = zone.id;
+                    card.querySelector('.sub').textContent = zone.docs.length + ' документов';
+                    card.addEventListener('click', () => openZone(zone));
+                }
+            });
+        }
+
+        document.getElementById('backToHome').addEventListener('click', () => {
+            document.getElementById('docListOverlay').classList.remove('active');
+        });
+
+        document.getElementById('backToList').addEventListener('click', () => {
+            document.getElementById('docReaderOverlay').classList.remove('active');
+            document.getElementById('docListOverlay').classList.add('active');
+        });
+
+        document.getElementById('omegaBtn').addEventListener('click', () => {
+            showScreen('bootgate');
+            loadingStarted = false;
+            document.getElementById('authId').value = '';
+            document.getElementById('authPass').value = '';
+            document.getElementById('authError').textContent = '';
+        });
+
+        // ============================================================
+        // M.I.C. MODULE
+        // ============================================================
         let micAnimationTimer = null;
         let micCurrentState = 0;
         const micWindowEl = document.getElementById('micSystemWindow');
